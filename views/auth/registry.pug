@@ -1,0 +1,31 @@
+extends ../layout/index
+
+block contenido
+    div
+        h1.text-4xl.my-10.font-extrabold.text-center Bienes 
+            span.font-normal Raices
+        h2.text-center.text-2xl.font-extrabold= page
+
+        .mt-8.mx-auto.max-w-md
+            .bg-white.py-8.px-4.shadow 
+                form.space-y-5(method="POST" action="/auth/signIn")
+                    div 
+                        label(for="nombre").block.text-sm.uppercase.text-gray-500.mb-2.font-bold Tu nombre
+                        input(placeholder="Tu Nombre" type="text" name="nombre")#nombre.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400
+                    div 
+                        label(for="email").block.text-sm.uppercase.text-gray-500.mb-2.font-bold Tu email
+                        input(placeholder="Tu Email" type="email" name="email")#email.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400
+                    div 
+                        label(for="password").block.text-sm.uppercase.text-gray-500.mb-2.font-bold Tu password
+                        input(placeholder="Tu password" type="password" name="password")#password.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400
+                    div 
+                        label(for="repetir_password").block.text-sm.uppercase.text-gray-500.mb-2.font-bold Repetir Password
+                        input(placeholder="Repetir password" type="password" name="repetir_password")#repetir_password.w-full.px-3.py-1.border.border-gray-300.rounded-md.placeholder-gray-400
+                     
+                    div.flex.items-center.justify-between.text-sm
+                        p ¿Ya tienes cuenta? 
+                            a(href="/auth/login").text-indigo-700 Iniciar Sesión
+                       
+                        a(href="/auth/forgot-password").text-indigo-700 Olvide mi password
+
+                    input(type="submit" value="Crear Cuenta" class="w-full bg-indigo-600 hover:bg-indigo-700 font-bold text-white py-3 cursor-pointer")
