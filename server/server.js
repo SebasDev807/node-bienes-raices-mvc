@@ -11,12 +11,12 @@ class Server {
         this.routesPath = {
             auth: '/auth'
         }
-      
-        this.routes();
+      //Cuidado con el orden
         this.middlewares();
+        this.routes();
+        this.settings();
         this.dbConnect();
         this.listen();
-        this.settings();
     }
 
     //Routing

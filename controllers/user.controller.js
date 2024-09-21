@@ -5,6 +5,7 @@ const formLogin = (req, res) => {
 }
 
 const formSignIn = (req, res) => {
+
     res.render('auth/registry', {
         page: 'Crear cuenta'
     })
@@ -12,18 +13,7 @@ const formSignIn = (req, res) => {
 
 const createAcount = (req, res) => {
 
-    const { password, repetir_password } = req.body;
-
-    if(password !== repetir_password){
-        return res.status(400).json({
-            msg:'Las contraseñas no coinciden'
-        })
-    }
-
-    res.json({
-        password,
-        repetir_password
-    })
+   console.log(req.body);
 }
 
 const formForgotMyPassword = (req, res) => {
